@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonitorPro</title>
+
+    <!-- Font Links -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+
+      /* Prevent body scroll when sidebar is open */
+      body.sidebar-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header - Nav -->
+    <header id="header">
+      <nav>
+        <!-- Logo and Links -->
+        <div class="logo-links">
+          <!-- logo -->
+          <div>
+            <img src="/assets/headerImg/Logo.png" alt="Logo" />
+          </div>
+
+          <!-- links -->
+          <div class="links-nav">
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Enterprise</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Sign in account -->
+        <div class="dark-mode-container">
+          <div class="account">
+            <ul>
+              <li><a href="#">Open an account</a></li>
+            </ul>
+            <div class="sign-in">
+              <span class="material-symbols-outlined">account_circle</span>
+              <button>Sign In</button>
+            </div>
+          </div>
+          <!-- Hamburger Menu Icon -->
+          <span
+            class="material-symbols-outlined hamburger-btn"
+            id="hamburger-btn"
+            >menu</span
+          >
+          <span class="material-symbols-outlined theme-toggle" id="themeToggle">
+            dark_mode
+          </span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="sidebar-header">
+        <img src="/assets/headerImg/Logo.png" alt="Logo" />
+        <span class="material-symbols-outlined" id="closeSidebar">close</span>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Open an account</a></li>
+      </ul>
+      <div class="mobile-account">
+        <div class="sign-in">
+          <span class="material-symbols-outlined">account_circle</span>
+          <button>Sign In</button>
+        </div>
+      </div>
+    </div>
+    <!-- main for section -->
+    <main>
+      <section class="hero-section">
+        <!-- hero contex -->
+        <div class="hero-content">
+          <!-- hero text -->
+          <div class="hero-text">
+            <h1>Start monitoring your <br />website like a pro</h1>
+            <p>
+              Get a bird's eye view with our customizable dashboard. Stay on top
+              of things! Revamp your work process with our game-changing
+              feature. Boost productivity and efficiency!
+            </p>
+            <!-- Hero Button -->
+            <div class="two-button">
+              <button class="try-for-free btn">Try for free</button>
+              <button class="view-Pricing btn">
+                View Pricing
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+          <!-- Hero media -->
+          <div class="hero-media">
+            <img src="/assets/heroImg/Image.png" alt="Hero Image" />
+          </div>
+          <!-- Hero Companies -->
+          <div class="hero-companies">
+            <h1>Trusted by these companies</h1>
+            <img src="/assets/heroImg/companies/Google.png" alt="Google" />
+            <img src="/assets/heroImg/companies/Slack.png" alt="Slack" />
+            <img
+              src="/assets/heroImg/companies/Trustpilot.png"
+              alt="Trustpilot"
+            />
+            <img src="/assets/heroImg/companies/CNN logo.png" alt="CNN" />
+            <img src="/assets/heroImg/companies/Clutch.png" alt="Clutch" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <div class="features-section">
+        <div class="feature-container">
+          <!-- features 1: sales monitoring -->
+          <div class="features-item">
+            <div class="features-content">
+              <span class="feature-badge blue-badge">Sales Monitoring</span>
+              <h1 class="features-title">
+                Simplify your sales <br />monitoring
+              </h1>
+              <p class="features-description">
+                Stay on top of things and revamp your work process with our
+                game-changing feature. Get a bird's eye view with our
+                customizable dashboard.
+              </p>
+              <div class="feature-benefits">
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+                <!-- Links -->
+                <div class="links">
+                  <a href="#" class="learn-btn blue">
+                    Learn More
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Images -->
+            <div class="feature-img">
+              <img src="/assets/featureImg/features-one.png" alt="" />
+            </div>
+          </div>
+          <!-- Feature 2: Customer Support (Reversed Layout) -->
+          <div class="features-item reverse">
+            <div class="features-content">
+              <span class="feature-badge green-badge">Customer Support</span>
+              <h1 class="features-title">Get in touch with your customers</h1>
+              <p class="features-description">
+                Stay on top of things and revamp your work process with our
+                game-changing feature. Get a bird's eye view with our
+                customizable dashboard.
+              </p>
+              <div class="feature-benefits">
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="group">
+                  <span class="material-symbols-outlined check-icon"
+                    >check</span
+                  >
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+                <!-- Links -->
+                <div class="links">
+                  <a href="#" class="learn-btn green">
+                    Learn More
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Images -->
+            <div class="feature-img">
+              <img src="/assets/featureImg/features-two.png" alt="" />
+            </div>
+          </div>
+
+          <!-- features 3: growth monitoring -->
+          <div class="features-item">
+            <div class="features-content">
+              <span class="feature-badge pink-badge">Growth Monitoring</span>
+              <h1 class="features-title grwoth-monitoring">
+                Monitor your site’s new subscribers
+              </h1>
+              <p class="features-description">
+                Stay on top of things and revamp your work process with our
+                game-changing feature. Get a bird's eye view with our
+                customizable dashboard.
+              </p>
+              <div class="contain-count">
+                <div class="group">
+                  <h1>800+</h1>
+                  <p>Lorem, ipsum dolor.</p>
+                </div>
+                <div class="group">
+                  <h1>800+</h1>
+                  <p>Lorem, ipsum dolor.</p>
+                </div>
+              </div>
+              <!-- Links -->
+              <div class="links">
+                <a href="#" class="learn-btn pink">
+                  Learn More
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Images -->
+            <div class="feature-img">
+              <img src="/assets/featureImg/features-three.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testemonial -->
+
+      <section class="testimonials">
+        <div class="testemonial-container">
+          <div class="title-testimonial">
+            <h2>Testimonials</h2>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur ma. Ut enim ad minim veniam, quis
+              nostrud exercitation.
+            </p>
+          </div>
+
+          <!-- First Column -->
+          <div class="testimonials-firstRow">
+            <div class="slider-track left-to-right">
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img src="/assets/testemonialImg/Image.png" alt="profile" />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/twitter-x-logo-42554.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+              <!-- Second Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/appstore.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-6.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial//google-logo-9811.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-5.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/google-logo-9808.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-6.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/play-store-logo-33867.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image4.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/twitter-x-logo-42554.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second row -->
+
+          <div class="testimonials-firstRow row-right">
+            <div class="slider-track right-to-left">
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img src="/assets/testemonialImg/Image.png" alt="profile" />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/twitter-x-logo-42554.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+              <!-- Second Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-3.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/appstore.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-6.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial//google-logo-9811.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-5.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/google-logo-9808.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image-6.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/play-store-logo-33867.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+
+              <!-- Third Row -->
+              <div class="container-profile">
+                <div class="profile-app">
+                  <div class="name-profile">
+                    <img
+                      src="/assets/testemonialImg/Image4.png"
+                      alt="profile"
+                    />
+                    <div class="name-position">
+                      <p>Grant Style</p>
+                      <span>CEO of Biffco Enterprises Ltd.</span>
+                    </div>
+                  </div>
+                  <div class="application">
+                    <img
+                      src="/assets/application-testemoial/twitter-x-logo-42554.png"
+                      alt=""
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet? Ut enim ad minima veniam, quis nostrum exercitationem
+                  ullam. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Est vero quaerat magni sapiente, repudiandae officia
+                  optio expedita ducimus asperiores eveniet eum. Perferendis
+                  cumque sapiente consequatur incidunt officiis pariatur, quidem
+                  voluptatem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Accordion -->
+
+      <section class="accordion-container">
+        <div class="accordion-group">
+          <div class="accordion-left">
+            <span>Frequently Asked Questions</span>
+            <h1>
+              Let’s clarify some of <br />
+              your questions
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+          </div>
+
+          <div class="accordion-right">
+            <!-- Item 1 -->
+            <div class="item-container">
+              <div class="faq-question">
+                <div class="faq-group">
+                  <span class="question"
+                    >Ut enim ad minima veniam, quis nostrum exercitationem
+                    ullam?</span
+                  >
+                  <span class="material-symbols-outlined toggle-icon">add</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item-container">
+              <div class="faq-question">
+                <div class="faq-group">
+                  <span class="question"
+                    >Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit?</span
+                  >
+                  <span class="material-symbols-outlined toggle-icon">add</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="item-container">
+              <div class="faq-question">
+                <div class="faq-group">
+                  <span class="question"
+                    >Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit?</span
+                  >
+                  <span class="material-symbols-outlined toggle-icon">add</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="item-container">
+              <div class="faq-question">
+                <div class="faq-group">
+                  <span class="question"
+                    >Quis autem vel eum iure reprehenderit qui in ea voluptate
+                    velit?</span
+                  >
+                  <span class="material-symbols-outlined toggle-icon">add</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Header blur effect on scroll
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Dark / Light Mode Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        // Change icon based on current theme
+        if (body.classList.contains("dark-mode")) {
+          themeToggle.textContent = "light_mode";
+        } else {
+          themeToggle.textContent = "dark_mode";
+        }
+      });
+
+      // Mobile Sidebar functionality
+      const hamburger = document.getElementById("hamburger-btn");
+      const mobileSidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("overlay");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      // Function to open sidebar
+      function openSidebar() {
+        mobileSidebar.classList.add("active");
+        overlay.classList.add("active");
+        body.classList.add("sidebar-open"); // Prevent body scroll
+      }
+
+      // Function to close sidebar
+      function closeSidebarFunc() {
+        mobileSidebar.classList.remove("active");
+        overlay.classList.remove("active");
+        body.classList.remove("sidebar-open"); // Re-enable body scroll
+      }
+
+      // Event listeners
+      hamburger.addEventListener("click", openSidebar);
+      closeSidebar.addEventListener("click", closeSidebarFunc);
+      overlay.addEventListener("click", closeSidebarFunc);
+
+      // Close sidebar on escape key
+      document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "Escape" &&
+          mobileSidebar.classList.contains("active")
+        ) {
+          closeSidebarFunc();
+        }
+      });
+
+      // Close sidebar when clicking on mobile links (optional, for better UX)
+      const mobileLinks = document.querySelectorAll(".mobile-links a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeSidebarFunc);
+      });
+
+      // Handle window resize
+      window.addEventListener("resize", function () {
+        if (
+          window.innerWidth > 768 &&
+          mobileSidebar.classList.contains("active")
+        ) {
+          closeSidebarFunc();
+        }
+      });
+
+      // Accordion
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".item-container");
+
+        items.forEach((item) => {
+          const header = item.querySelector(".faq-group");
+          const answer = item.querySelector(".answer");
+          const icon = item.querySelector(".toggle-icon");
+
+          header.addEventListener("click", () => {
+            // close other open items
+            items.forEach((other) => {
+              if (other !== item && other.classList.contains("active")) {
+                const otherAnswer = other.querySelector(".answer");
+                otherAnswer.style.maxHeight = 0;
+                other.classList.remove("active");
+                other.querySelector(".toggle-icon").textContent = "add";
+              }
+            });
+
+            // toggle clicked item
+            if (item.classList.contains("active")) {
+              answer.style.maxHeight = 0;
+              item.classList.remove("active");
+              icon.textContent = "add";
+            } else {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              item.classList.add("active");
+              icon.textContent = "remove";
+            }
+          });
+        });
+
+        // keep height correct if window is resized while open
+        window.addEventListener("resize", () => {
+          items.forEach((item) => {
+            if (item.classList.contains("active")) {
+              const ans = item.querySelector(".answer");
+              ans.style.maxHeight = ans.scrollHeight + "px";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
