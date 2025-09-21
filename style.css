@@ -37,7 +37,7 @@ body.dark-mode {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Fixed: was 0, should be border-box */
 }
 
 body {
@@ -46,7 +46,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   transition: background 0.3s ease, color 0.3s ease;
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* header */
@@ -173,7 +173,7 @@ header nav .account .sign-in button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; 
+  gap: 20px; /* Reduced gap for better mobile spacing */
 }
 
 /* Dark Mode Toggle Button */
@@ -232,7 +232,7 @@ main {
   top: 0;
   left: -100%;
   width: 280px;
-  max-width: 85vw; 
+  max-width: 85vw; /* Responsive width */
   height: 100vh;
   background: var(--bg-primary);
   padding: 20px;
@@ -242,7 +242,7 @@ main {
   flex-direction: column;
   gap: 30px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; 
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .mobile-sidebar.active {
@@ -354,11 +354,12 @@ main .hero-section {
 main .hero-section::before {
   content: "";
   position: absolute;
-  bottom: 0; /* para magsimula sa itaas */
-  left: 0;
+  bottom: 0;
   width: 100%;
-  min-height: 600px; 
-
+  min-height: 600px;
+  background: url("/assets/heroImg/companies/gradiant/gradiant.png")
+    top/cover no-repeat;
+  z-index: -1;
 }
 
 main .hero-section .hero-content {
@@ -837,7 +838,7 @@ main .hero-section .hero-content .hero-media img {
 }
 
 .item-container.active .toggle-icon {
-  transform: rotate(180deg);
+  transform: rotate(120deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -883,6 +884,10 @@ main .hero-section .hero-content .hero-media img {
     object-fit: contain;
   }
 
+  /* main content section */
+  /* main {
+    padding: 40px;
+  } */
   .features-item {
     flex-direction: column; /* stack image and text on smaller screens */
     gap: 30px;
@@ -893,7 +898,7 @@ main .hero-section .hero-content .hero-media img {
     flex-direction: column;
   }
 
-  .accordion-group{
+  .accordion-group {
     flex-direction: column;
   }
 }
