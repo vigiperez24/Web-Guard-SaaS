@@ -1,5 +1,8 @@
+/* ==========================================================
+   1. ROOT VARIABLES
+   ========================================================== */
 :root {
-  /* ============= COLORS ============= */
+  /* ===== Colors ===== */
   --primary-color: #3b82f6;
   --primary-hover: #2563eb;
   --primary-light: #e3f1ff;
@@ -9,21 +12,30 @@
   --secondary-hover: #4f46e5;
   --secondary-light: #e0e7ff;
 
-  /* Background (Light Mode Default) */
+  /* ===== Background (Light Mode Default) ===== */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #d3e4ec;
 
-  /* Text (Light Mode Default) */
+  /* ===== Text (Light Mode Default) ===== */
   --text-primary: #172026;
   --text-secondary: #36485c;
   --text-muted: #94a3b8;
 
-  /* Line Height */
+  /* ===== Global Line Height ===== */
   --line-height: 1.6;
 }
 
-/* Dark Mode */
+/* ==========================================================
+   2. GLOBAL RESETS & BASE
+   ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark Mode override variables */
 body.dark-mode {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
@@ -34,79 +46,66 @@ body.dark-mode {
   --text-muted: #94a3b8;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; /* Fixed: was 0, should be border-box */
+/* Prevent body scroll when sidebar is open */
+body.sidebar-open {
+  overflow: hidden;
 }
 
+/* Base body styles */
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
+  line-height: var(--line-height);
   transition: background 0.3s ease, color 0.3s ease;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* header */
+/* ==========================================================
+   3. HEADER & NAVIGATION
+   ========================================================== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: all 0.3s ease;
   background: var(--bg-primary);
   box-shadow: none;
+  transition: all 0.3s ease;
 }
 
-/* Blur header effects */
+/* Blur header when scrolled */
 #header.scrolled {
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
 body.dark-mode #header.scrolled {
   background: rgba(15, 23, 42, 0.7);
 }
 
 header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1700px;
   margin: 0 auto;
   padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* --- Left: logo and links --- */
 header nav .logo-links {
   display: flex;
-  gap: 40px;
   align-items: center;
   justify-content: center;
+  gap: 40px;
 }
-
 header nav .logo-links div img {
   width: 40px;
   height: 40px;
-}
-
-header nav .links-nav ul li a {
-  text-decoration: none;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-header nav .links-nav ul li a:hover {
-  color: var(--text-primary);
-}
-
-header nav .links-nav li {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
 }
 
 header nav .links-nav ul {
@@ -115,21 +114,31 @@ header nav .links-nav ul {
   gap: 40px;
   font-weight: 400;
 }
-
-/* Nav Account left nav */
-header nav .account {
-  display: flex;
+header nav .links-nav li {
   font-size: 1.1rem;
   color: var(--text-secondary);
+}
+header nav .links-nav ul li a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+header nav .links-nav ul li a:hover {
+  color: var(--text-primary);
+}
+
+/* --- Right: account buttons --- */
+header nav .account {
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
 }
-
 header nav .account li {
   list-style: none;
 }
-
 header nav .account li a {
   text-decoration: none;
   color: var(--text-secondary);
@@ -137,7 +146,6 @@ header nav .account li a {
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
-
 header nav .account li a:hover {
   color: var(--text-primary);
 }
@@ -148,13 +156,11 @@ header nav .account .sign-in {
   justify-content: center;
   gap: 10px;
 }
-
 header nav .account .sign-in span {
   font-size: 2rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
 header nav .account .sign-in button {
   color: var(--text-secondary);
   background-color: transparent;
@@ -163,32 +169,28 @@ header nav .account .sign-in button {
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
 header nav .account .sign-in button:hover {
   color: var(--text-primary);
 }
 
-/* darkmode container */
+/* Dark mode toggle */
 .dark-mode-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Reduced gap for better mobile spacing */
+  gap: 20px;
 }
-
-/* Dark Mode Toggle Button */
 .theme-toggle {
   cursor: pointer;
   font-size: 1.8rem;
   color: var(--text-secondary);
   transition: color 0.3s ease;
 }
-
 .theme-toggle:hover {
   color: var(--primary-color);
 }
 
-/* Mobile hamburger button */
+/* Mobile hamburger */
 .hamburger-btn {
   display: none;
   font-size: 2rem;
@@ -196,19 +198,23 @@ header nav .account .sign-in button:hover {
   color: var(--text-secondary);
   transition: color 0.3s ease;
 }
-
 .hamburger-btn:hover {
   color: var(--text-primary);
 }
 
+/* ==========================================================
+   4. MAIN LAYOUT
+   ========================================================== */
 main {
-  padding: 80px 0px;
+  padding: 80px 0;
   min-height: 100vh;
   background: var(--bg-secondary);
   transition: background 0.3s ease;
 }
 
-/* MOBILE SIDEBAR STYLES */
+/* ==========================================================
+   5. MOBILE SIDEBAR
+   ========================================================== */
 .overlay {
   position: fixed;
   top: 0;
@@ -218,10 +224,9 @@ main {
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
   z-index: 998;
+  transition: all 0.3s ease;
 }
-
 .overlay.active {
   opacity: 1;
   visibility: visible;
@@ -232,19 +237,17 @@ main {
   top: 0;
   left: -100%;
   width: 280px;
-  max-width: 85vw; /* Responsive width */
-  height: 100vh;
+  max-width: 85vw;
   background: var(--bg-primary);
   padding: 20px;
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow-y: auto;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  z-index: 999;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .mobile-sidebar.active {
   left: 0;
 }
@@ -256,24 +259,21 @@ main {
   padding-bottom: 20px;
   border-bottom: 1px solid var(--bg-tertiary);
 }
-
 .sidebar-header img {
   width: 40px;
   height: 40px;
 }
-
 .sidebar-header #closeSidebar {
   font-size: 2rem;
   cursor: pointer;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
   padding: 5px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.3s ease;
 }
-
 .sidebar-header #closeSidebar:hover {
   color: var(--text-primary);
   background: var(--bg-tertiary);
@@ -286,19 +286,16 @@ main {
   gap: 15px;
   flex: 1;
 }
-
 .mobile-links li a {
+  display: block;
   text-decoration: none;
   color: var(--text-secondary);
   font-size: 1.1rem;
-  transition: color 0.3s ease;
   font-weight: 500;
   padding: 12px 16px;
   border-radius: 8px;
-  display: block;
   transition: all 0.3s ease;
 }
-
 .mobile-links li a:hover {
   color: var(--text-primary);
   background: var(--bg-tertiary);
@@ -309,26 +306,22 @@ main {
   padding-top: 20px;
   margin-top: auto;
 }
-
 .mobile-account .sign-in {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
   border-radius: 8px;
-  transition: background 0.3s ease;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
-
 .mobile-account .sign-in:hover {
   background: var(--bg-tertiary);
 }
-
 .mobile-account .sign-in span {
   font-size: 2rem;
   color: var(--text-secondary);
 }
-
 .mobile-account .sign-in button {
   background: transparent;
   border: none;
@@ -338,27 +331,26 @@ main {
   font-weight: 500;
 }
 
-/* Hero Section */
-
-/* Hero Section */
+/* ==========================================================
+   6. HERO SECTION
+   ========================================================== */
 main .hero-section {
+  position: relative;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  min-height: 100vh;
   z-index: 1;
 }
-
 main .hero-section::before {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   min-height: 600px;
-  background: url("/assets/heroImg/companies/gradiant/gradiant.png")
-    top/cover no-repeat;
+  background: url("/assets/heroImg/companies/gradiant/gradiant.png") top/cover
+    no-repeat;
   z-index: -1;
 }
 
@@ -368,53 +360,46 @@ main .hero-section .hero-content {
   display: flex;
   flex-direction: column;
 }
-
-main .hero-section .hero-content .hero-text {
+.hero-text {
   text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
-
-main .hero-section .hero-content .hero-text h1 {
+.hero-text h1 {
   font-size: 4rem;
   color: var(--text-primary);
 }
-
-main .hero-section .hero-content .hero-text p {
+.hero-text p {
   font-size: 1.1rem;
   max-width: 800px;
   line-height: 1.6;
   color: var(--text-secondary);
 }
 
-main .hero-section .hero-content .two-button {
+.two-button {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-
-main .hero-section .hero-content .two-button button {
+.two-button button {
   padding: 12px 22px;
   font-size: 1.1rem;
   border: none;
 }
-
-main .hero-section .hero-content .two-button button span {
+.two-button button span {
   font-size: 0.98rem;
   color: var(--text-secondary);
 }
-
-main .hero-section .hero-content .two-button .try-for-free {
+.two-button .try-for-free {
   background: var(--primary-dark);
   border-radius: 8px;
   color: var(--primary-light);
 }
-
-main .hero-section .hero-content .two-button .view-Pricing {
+.two-button .view-Pricing {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,127 +407,109 @@ main .hero-section .hero-content .two-button .view-Pricing {
   color: var(--primary-dark);
   background-color: transparent;
 }
-main .hero-section .hero-content .hero-media img {
+
+.hero-media img {
   width: 90%;
   height: auto;
   object-fit: contain;
 }
 
-.hero-content .hero-companies h1 {
+.hero-companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.hero-companies h1 {
   color: var(--bg-primary);
   text-align: center;
 }
-
-.hero-content .hero-companies {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.hero-content .hero-companies img {
+.hero-companies img {
   width: 90px;
   object-fit: contain;
 }
 
-/* Features Section CSS Structure  */
+/* ==========================================================
+   7. FEATURES SECTION
+   ========================================================== */
 .features-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 0px;
+  margin: 50px 0;
 }
-
-.features-section .feature-container {
+.feature-container {
   max-width: 1700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
-
-.features-item.reverse {
-  flex-direction: row-reverse;
-}
-
-.features-section .feature-container .features-item {
+.features-item {
   display: flex;
   gap: 60px;
   padding: 40px;
 }
-
-.features-section .feature-container .features-item .features-content {
+.features-item.reverse {
+  flex-direction: row-reverse;
+}
+.features-content {
   display: flex;
+  flex-direction: column;
   align-items: start;
   justify-content: center;
   gap: 20px;
-  flex-direction: column;
 }
-
-.features-section .feature-container .features-item .features-content span {
+.features-content span {
   font-weight: 600;
   font-size: 1.2rem;
 }
-
-.features-section .feature-container .features-item .features-content h1 {
+.features-content h1 {
   font-size: 3rem;
+  max-width: 500px;
   color: var(--text-primary);
   font-weight: 600;
 }
-
-.features-section .feature-container .features-item .features-content p {
+.features-content p {
   color: var(--text-secondary);
   max-width: 600px;
 }
-
-.features-section
-  .feature-container
-  .features-item
-  .features-content
-  .feature-benefits {
+.feature-benefits {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-.features-section .feature-container .features-item .features-content .group {
+.features-content .group {
   display: flex;
   flex-direction: row;
   gap: 8px;
 }
 
-/* links button */
+/* --- Links button --- */
 .learn-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  margin-top: 5px;
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  justify-content: center;
-  margin-top: 5px;
   transition: color 0.3s ease;
 }
-/* hover effect */
-
 .learn-btn span {
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.1);
   transition: backgroun-color 0.3 ease;
 }
-
 .learn-btn:hover span {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.feature-img img {
-  width: 100%;
-  height: 100%;
 }
 
 /* --- Color modifiers --- */
@@ -555,22 +522,22 @@ main .hero-section .hero-content .hero-media img {
 .learn-btn.pink {
   color: #eb2891;
 }
-
-/* Features Section */
 .blue-badge {
   color: #0085ff;
 }
-
-/*  Feature 2: Customer Support badge */
-
 .green-badge {
   color: #00a424;
 }
-
 .pink-badge {
   color: #eb2891;
 }
 
+.feature-img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Count container --- */
 .contain-count {
   width: 40%;
   display: flex !important;
@@ -581,43 +548,36 @@ main .hero-section .hero-content .hero-media img {
   display: flex !important;
   flex-direction: column !important;
 }
-
 .contain-count .group h1 {
   font-size: 1.4rem !important;
   font-family: 300 !important;
 }
-.features-content h1 {
-  max-width: 500px;
-}
 
-/* Testemonials */
+/* ==========================================================
+   8. TESTIMONIALS
+   ========================================================== */
 .testimonials {
   background-color: var(--bg-tertiary);
-  padding: 60px 0px;
+  padding: 60px 0;
 }
-
 .testemonial-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .title-testimonial {
   width: 100%;
-
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
 }
-
 .title-testimonial h2 {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
 }
-
 .title-testimonial p {
   font-size: 1rem;
   font-weight: 400;
@@ -641,23 +601,19 @@ main .hero-section .hero-content .hero-media img {
   gap: 30px;
   width: max-content;
 }
-
 /* Top Row — Scrolling Left */
 .slider-track.left-to-right {
   animation: slideLeft 20s linear infinite;
 }
-
 /* Bottom Row — Scrolling Right */
 .slider-track.right-to-left {
   animation: slideRight 20s linear infinite;
 }
-
 /* Pause on hover */
 .slider-track:hover {
   animation-play-state: paused;
 }
 
-/* Scroll to the LEFT (normal) — for top row */
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
@@ -666,8 +622,6 @@ main .hero-section .hero-content .hero-media img {
     transform: translateX(-66.666%);
   }
 }
-
-/* Scroll to the RIGHT — for bottom row */
 @keyframes slideRight {
   0% {
     transform: translateX(-66.666%);
@@ -689,39 +643,32 @@ main .hero-section .hero-content .hero-media img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: box-border 0.3s ease;
 }
-
-/* Hover Card */
 .container-profile:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: box-border 0.6s ease;
 }
-
-.container-profile .profile-app {
+.profile-app {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-
-.container-profile .profile-app .name-profile {
+.name-profile {
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: center;
   justify-content: center;
 }
-
-.container-profile .profile-app .name-profile .name-position p {
+.name-position p {
   font-weight: 500;
   font-size: 1.1rem;
   color: var(--text-secondary);
 }
-
-.container-profile .profile-app .name-profile .name-position span {
+.name-position span {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
-
 .container-profile p {
   color: var(--text-secondary);
   display: -webkit-box;
@@ -731,13 +678,15 @@ main .hero-section .hero-content .hero-media img {
   line-height: 1.5;
 }
 
+/* ==========================================================
+   9. FAQ / ACCORDION
+   ========================================================== */
 .accordion-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 40px 0;
 }
-
 .accordion-group {
   max-width: 1200px;
   display: flex;
@@ -746,28 +695,24 @@ main .hero-section .hero-content .hero-media img {
   gap: 30px;
   padding: 50px;
 }
-
 .accordion-left {
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
   gap: 20px;
-  max-width: 500px;
 }
-
 .accordion-left span {
   color: #eb2891;
   font-weight: 500;
 }
-
 .accordion-left h1 {
-  color: var(--text-primary);
   font-size: 2.5rem;
   font-weight: 500;
   margin: 0;
+  color: var(--text-primary);
 }
-
 .accordion-left p {
   color: var(--text-secondary);
   font-size: 1rem;
@@ -795,13 +740,11 @@ main .hero-section .hero-content .hero-media img {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .faq-question {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .faq-group {
   cursor: pointer;
   user-select: none;
@@ -811,7 +754,6 @@ main .hero-section .hero-content .hero-media img {
   gap: 12px;
   width: 100%;
 }
-
 .question {
   font-weight: 500;
 }
@@ -823,7 +765,6 @@ main .hero-section .hero-content .hero-media img {
   opacity: 0;
   transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
 }
-
 /* show when active */
 .item-container.active .answer {
   opacity: 1;
@@ -831,12 +772,11 @@ main .hero-section .hero-content .hero-media img {
 
 /* icon rotation */
 .toggle-icon {
-  transition: transform 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.25s ease;
 }
-
 .item-container.active .toggle-icon {
   transform: rotate(120deg);
 }
@@ -848,27 +788,26 @@ main .hero-section .hero-content .hero-media img {
   }
 }
 
-/* Mobile device Responsive */
+/* ==========================================================
+   10. RESPONSIVE (Mobile)
+   ========================================================== */
 @media (max-width: 768px) {
   .links-nav {
     display: none;
   }
-
   header nav .account {
     display: none;
   }
-
   .hamburger-btn {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .dark-mode-container {
     gap: 15px;
   }
-  /* main hero */
 
+  /* Hero text resize */
   main .hero-section .hero-content .hero-text h1 {
     font-size: 2.5rem;
   }
@@ -878,22 +817,17 @@ main .hero-section .hero-content .hero-media img {
   .hero-content .hero-companies h1 {
     font-size: 1.8rem;
   }
-
   .hero-content .hero-companies img {
     width: 70px;
     object-fit: contain;
   }
 
-  /* main content section */
-  /* main {
-    padding: 40px;
-  } */
+  /* Features layout */
   .features-item {
-    flex-direction: column; /* stack image and text on smaller screens */
+    flex-direction: column;
     gap: 30px;
     padding: 40px;
   }
-
   .features-item.reverse {
     flex-direction: column;
   }
