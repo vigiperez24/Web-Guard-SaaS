@@ -11,6 +11,7 @@ window.addEventListener("scroll", function () {
 // Dark / Light Mode Toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
+const darkLightMode = document.getElementById("logo-dark-light");
 
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
@@ -18,8 +19,10 @@ themeToggle.addEventListener("click", () => {
   // Change icon based on current theme
   if (body.classList.contains("dark-mode")) {
     themeToggle.textContent = "light_mode";
+    darkLightMode.src = "/assets/headerImg/dark-mode.png";
   } else {
     themeToggle.textContent = "dark_mode";
+    darkLightMode.src = "/assets/headerImg/light-mode.png";
   }
 });
 
@@ -40,7 +43,7 @@ function openSidebar() {
 function closeSidebarFunc() {
   mobileSidebar.classList.remove("active");
   overlay.classList.remove("active");
-  body.classList.remove("sidebar-open"); // Re-enable body scroll
+  body.classList.remove("sidebar-open"); 
 }
 
 // Event listeners
@@ -110,4 +113,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+// Mobile Accordion
+function toggleAccordion(header) {
+  const accordionItem = header.parentElement;
+  const isActive = accordionItem.classList.contains("active");
+
+  // Close all accordion items
+  document.querySelectorAll(".accordion-item").forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  // Toggle current item
+  if (!isActive) {
+    accordionItem.classList.add("active");
+  }
+}
+
+// Close accordion when clicking outside
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".accordion-item")) {
+    document.querySelectorAll(".accordion-item").forEach((item) => {
+      item.classList.remove("active");
+    });
+  }
 });

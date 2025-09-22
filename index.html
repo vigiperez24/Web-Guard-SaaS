@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MonitorPro</title>
+    <title>Web Guard</title>
+    <link rel="icon" type="image/png" href="/assets/headerImg/light-mode.png" />
 
     <!-- Font Links -->
     <link
@@ -19,10 +20,13 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-
+    <!-- Social Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-
-    <style></style>
   </head>
   <body>
     <!-- Header - Nav -->
@@ -31,8 +35,13 @@
         <!-- Logo and Links -->
         <div class="logo-links">
           <!-- logo -->
-          <div>
-            <img src="/assets/headerImg/Logo.png" alt="Logo" />
+          <div class="logo-group">
+            <img
+              id="logo-dark-light"
+              src="assets/headerImg/light-mode.png"
+              alt="Logo"
+            />
+            <h2>Web Guard</h2>
           </div>
 
           <!-- links -->
@@ -75,7 +84,7 @@
     <!-- Mobile Sidebar -->
     <div class="mobile-sidebar" id="mobileSidebar">
       <div class="sidebar-header">
-        <img src="/assets/headerImg/Logo.png" alt="Logo" />
+        <h2>Web Guard</h2>
         <span class="material-symbols-outlined" id="closeSidebar">close</span>
       </div>
       <ul class="mobile-links">
@@ -127,7 +136,7 @@
               src="/assets/heroImg/companies/Trustpilot.png"
               alt="Trustpilot"
             />
-            <img src="/assets/heroImg/companies/CNN logo.png" alt="CNN" />
+            <img src="/assets/heroImg/companies/CNNlogo.png" alt="CNN" />
             <img src="/assets/heroImg/companies/Clutch.png" alt="Clutch" />
           </div>
         </div>
@@ -808,7 +817,7 @@
                 <p>Perfect for small businesses</p>
               </div>
               <div class="price">
-                <p>$500<span>/mo</span></p>
+                <p>$10<span>/mo</span></p>
               </div>
               <div class="group-features">
                 <div class="groups">
@@ -873,7 +882,172 @@
           </div>
         </div>
       </section>
+      <!-- CTA section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h1>Monitor your website like a pro</h1>
+          <p>
+            Join over 800+ happy site owners boosting productivity and
+            efficiency!
+          </p>
+          <div class="cta-buttons">
+            <button>Try to free</button>
+            <a href="#"
+              >Contact Sales<span class="material-symbols-outlined"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-content">
+            <!-- Logo Image -->
+            <div class="logo-name">
+              <div class="group">
+                <img
+                  class=".original-logo"
+                  src="/assets/headerImg/light-mode.png"
+                  alt=""
+                />
+                <h2>Web Guard</h2>
+              </div>
+            </div>
+            <!-- feature -->
+            <div class="features-text">
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Growth</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Chat</a></li>
+              </ul>
+            </div>
+            <!-- Pricing -->
+            <div class="pricing">
+              <ul>
+                <li><a href="#">Pricing </a></li>
+                <li><a href="#">Free trial</a></li>
+                <li><a href="#">Standard</a></li>
+                <li><a href="#">Business</a></li>
+              </ul>
+            </div>
+            <!-- Enterpise -->
+
+            <div class="enterpise">
+              <ul>
+                <li><a href="#">Enterprise </a></li>
+                <li><a href="#">Personalize</a></li>
+                <li><a href="#">Automation</a></li>
+                <li><a href="#">Invoicing</a></li>
+                <li><a href="#">24/7 Support</a></li>
+              </ul>
+            </div>
+
+            <!-- Carrers -->
+            <div class="Carrers">
+              <ul>
+                <li><a href="#">Careers </a></li>
+                <li><a href="#">Open Positions</a></li>
+                <li><a href="#">Part-Time</a></li>
+                <li><a href="#">Contractual</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mobile Accordion Layout -->
+          <div class="mobile-accordion">
+            <div class="logo-name">
+              <div class="group">
+                <img
+                  class="original-logo"
+                  src="/assets/headerImg/light-mode.png"
+                  alt="logo"
+                />
+                <h2>Web Guard</h2>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Features</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Growth</a></li>
+                  <li><a href="#">Sales</a></li>
+                  <li><a href="#">Chat</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Pricing Accordion -->
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Pricing</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Free trial</a></li>
+                  <li><a href="#">Standard</a></li>
+                  <li><a href="#">Business</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Enterprise Accordion -->
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Enterprise</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Personalize</a></li>
+                  <li><a href="#">Automation</a></li>
+                  <li><a href="#">Invoicing</a></li>
+                  <li><a href="#">24/7 Support</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Careers Accordion -->
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Careers</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Open Positions</a></li>
+                  <li><a href="#">Part-Time</a></li>
+                  <li><a href="#">Contractual</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Copyrights -->
+          <div class="footer-copyright">
+            <p>&copy; 2025 Your Web Guard. All rights reserved.</p>
+            <div class="icons-footer">
+              <!-- Facebook -->
+              <i class="fa-brands fa-facebook"></i>
+
+              <!-- X (Twitter new logo) -->
+              <i class="fa-brands fa-x-twitter"></i>
+
+              <!-- Instagram -->
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   </body>
-  <script src="/script.js"></script>
+  <script src="script.js" defer></script>
 </html>

@@ -119,6 +119,17 @@ header nav .logo-links div img {
   height: 40px;
 }
 
+header nav .logo-links .logo-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+header nav .logo-links .logo-group h2 {
+  font-size: 1.1rem;
+}
+
 header nav .links-nav ul {
   display: flex;
   list-style: none;
@@ -217,7 +228,8 @@ header nav .account .sign-in button:hover {
    4. MAIN LAYOUT
    ========================================================== */
 main {
-  padding: 80px 0;
+  /*       Top, Right, Bottom, Left (clockwise) */
+  padding: 80px 0px 40px 0px;
   min-height: 100vh;
   background: var(--bg-secondary);
   transition: background 0.3s ease;
@@ -1057,7 +1069,245 @@ main .hero-section .hero-content {
   line-height: 1.6;
   margin: 12px 0;
 }
+.cta-section {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(
+    135deg,
+    #a855f7 0%,
+    #ec4899 30%,
+    #f97316 70%,
+    #f59e0b 100%
+  );
+  margin: 0 auto 60px;
+  text-align: center;
+  padding: 70px 20px;
+  border-radius: 10px;
+  color: white;
+}
 
+.cta-section .cta-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-section .cta-content h1 {
+  font-size: 3rem;
+  max-width: 500px;
+  font-weight: 400;
+}
+
+.cta-section .cta-content p {
+  font-size: 1.4rem;
+
+  font-weight: 400;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.cta-buttons button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background-color: var(--primary-light);
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  color: purple;
+  letter-spacing: 1px;
+  transition: background-color 0.3 ease;
+  cursor: pointer;
+}
+
+.cta-buttons button:hover {
+  background-color: var(--primary-light);
+}
+
+.cta-buttons a {
+  color: var(--primary-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  text-decoration: none;
+  justify-items: center;
+  align-items: center;
+  letter-spacing: 1px;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.cta-buttons a span {
+  background-color: var(--primary-light);
+  color: #f87d12;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-buttons a span:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+footer {
+  padding: 0 40px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+
+/* Logo Section */
+.footer-content .logo-name {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.logo-name .group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-content .logo-name img {
+  height: 30px;
+  width: 30px;
+}
+
+.footer-content .logo-name h2 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.footer-content .features-content,
+.pricing,
+.enterprise {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.footer-content ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.footer-content ul li a:hover {
+  color: var(--text-primary);
+}
+
+.footer-content ul li:first-child a {
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+/* Copyright */
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.footer-copyright .icons-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.footer-copyright .icons-footer i {
+  font-size: 1.2rem;
+
+  cursor: pointer;
+}
+/* Mobile Accordion Styles */
+.mobile-accordion {
+  display: none;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.original-logo {
+  width: 40px;
+  height: 40px;
+}
+.accordion-content ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  padding: 0 10px;
+}
+
+.accordion-content ul li a:hover {
+  color: var(--text-primary);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   .card-container {
@@ -1149,5 +1399,40 @@ main .hero-section .hero-content {
   .accordion-group {
     flex-direction: column;
     padding: 30px;
+  }
+  /* cta section */
+  .cta-section {
+    border-radius: 0px;
+  }
+  /* Footer */
+
+  .footer-content {
+    display: none; /* Hide desktop grid */
+  }
+
+  .mobile-accordion {
+    display: block; /* Show mobile accordion */
+    margin-bottom: 30px;
+  }
+
+  .logo-name {
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .icons-footer {
+    gap: 25px;
+  }
+
+  .icons-footer i {
+    font-size: 1.4rem;
   }
 }
