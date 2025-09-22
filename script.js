@@ -11,18 +11,22 @@ window.addEventListener("scroll", function () {
 // Dark / Light Mode Toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
-const darkLightMode = document.getElementById("logo-dark-light");
+const darkLightMode = document.querySelectorAll(".logo-dark-light"); // NodeList
 
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
 
-  // Change icon based on current theme
+  // Change icon and all logos
   if (body.classList.contains("dark-mode")) {
     themeToggle.textContent = "light_mode";
-    darkLightMode.src = "/assets/headerImg/dark-mode.png";
+    darkLightMode.forEach((img) => {
+      img.src = "assets/headerImg/dark-mode.png";
+    });
   } else {
     themeToggle.textContent = "dark_mode";
-    darkLightMode.src = "/assets/headerImg/light-mode.png";
+    darkLightMode.forEach((img) => {
+      img.src = "assets/headerImg/light-mode.png";
+    });
   }
 });
 
@@ -43,7 +47,7 @@ function openSidebar() {
 function closeSidebarFunc() {
   mobileSidebar.classList.remove("active");
   overlay.classList.remove("active");
-  body.classList.remove("sidebar-open"); 
+  body.classList.remove("sidebar-open");
 }
 
 // Event listeners
